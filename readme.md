@@ -23,9 +23,26 @@ SELECT user_id, street, city, state, zip FROM addresses WHERE street = '6439 Zet
 - UPDATE addresses SET city = "New York", zip = "10108" WHERE user_id = 39 AND street = "12263 Jake Crossing";
 
 6.) How much would it cost to buy one of each tool?
-
+    -locate "Tools" category ($7383)
+      - Practical Rubbert Shirt: 1107
+      - Incredible Plastic Gloves: 5437
+      - Awesome Plastic Shirt: 839
+    -locate the word "Tools" associated with other categories
+      - SELECT category FROM items ORDER BY category ASC;
+      - Tools & Computers
+        Tools & Kids
+        Tools, Clothing & Toys
+        Tools, Garden & Games
+        Tools, Garden & Movies
+        Tools, Jewelery & Industrial
+        Sports & Tools
+      - SELECT title, category, price FROM items WHERE category LIKE "%Tools%";
+      - SELECT SUM(price) FROM items WHERE category LIKE "%Tools%";
+      - total: $46477
 
 7.) How much total items did we sell?
+    - SELECT SUM(quantity) FROM orders;
+    - total: 2125
 
 
 8.) How much was spent on books?
@@ -39,3 +56,4 @@ PRAGMA table_info(addresses);
 2|category|varchar|0||0
 3|description|text|0||0
 4|price|integer|0||0
+
