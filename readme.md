@@ -8,12 +8,12 @@ sqlite> SELECT title, category, price FROM items WHERE category = 'Books';
 
 4.) Who lives at "6439 Zetta Hills, Willmouth, WY"? Do they have another address?
 
-SELECT id, street, city, state, zip FROM addresses WHERE street = '6439 Zetta Hills' AND  city = 'Willmouth' AND state = 'WY';
+SELECT user_id, street, city, state, zip FROM addresses WHERE street = '6439 Zetta Hills' AND  city = 'Willmouth' AND state = 'WY';
 
 -check headers PRAGMA table_info(table_name);
--id = 43
-- SELECT id, first_name, last_name FROM users WHERE id = 43;
-- Kyral Kilback
+-id = 40
+- SELECT id, first_name, last_name FROM users WHERE id = 40;
+- Corrine Little
 
 5.) Correct Virginie Mitchell's address to "New York, NY, 10108"
 
@@ -34,3 +34,8 @@ SELECT id, street, city, state, zip FROM addresses WHERE street = '6439 Zetta Hi
 9.) Simulate buying an item by inserting a User for yourself and an Order for that User.
 
 PRAGMA table_info(addresses);
+
+1|title|varchar|0||0
+2|category|varchar|0||0
+3|description|text|0||0
+4|price|integer|0||0
