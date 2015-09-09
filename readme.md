@@ -46,7 +46,9 @@ SELECT user_id, street, city, state, zip FROM addresses WHERE street = '6439 Zet
 
 
 8.) How much was spent on books?
-
+    - SELECT SUM(quantity) FROM orders WHERE item_id =
+    - SELECT items.id, items.category, items.price, orders.item_id, orders.quantity FROM items INNER JOIN orders ON items.id = orders.item_id;
+    SELECT items.id, items.category, SUM(items.price) * SUM(orders.quantity), orders.item_id, orders.quantity FROM items INNER JOIN orders ON items.id = orders.item_id WHERE category LIKE "%Books%";
 
 9.) Simulate buying an item by inserting a User for yourself and an Order for that User.
 
